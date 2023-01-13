@@ -59,7 +59,7 @@ class MaYiWenKu(object):
 
         img1 = pilImage.new(img.mode, size=(box[2] - box[0], box[3] - box[1]))
         img1.paste(region)
-        img1 = img1.resize(size, pilImage.ANTIALIAS)
+        img1 = img1.resize(size, pilImage.LANCZOS)
         new_image_path = re.sub("(\d+).png", "\\1_handle.png", image_path)
         img1.save(new_image_path, quality=95)
 
